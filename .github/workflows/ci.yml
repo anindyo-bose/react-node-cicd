@@ -1,0 +1,25 @@
+name: Docker Image CI
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+    - name: Login Dockerhub
+      env:
+        DOCKER_USERNNAME: ${{secrets.DOCKER_USERNAME}}
+        DOCKER_PASSWORD: ${{secrets.DOCKER_PASSWORD}}
+      run: docker login -u $DOCKER_USERNNAME -p $DOCKER_PASSWORD
+    - name: Build the Docker image
+      run: docker build -t react-node-cicd
+    - name: Push to DockerHub
+      run: docker push anindyo-bose/react-node-cicd:latest 
