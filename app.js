@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 app.get('/names',(req,res)=>{
-    res.send("Anindyo");
+    res.send("Anindyo Bose");
 })
 
 app.listen(5000, () => {
