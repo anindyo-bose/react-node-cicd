@@ -22,4 +22,4 @@ jobs:
     - name: Build the Docker image
       run: docker build -t react-node-cicd .
     - name: Push to DockerHub
-      run: docker push anindyo-bose/react-node-cicd:latest 
+      run: docker push anindyobose/react-node-cicd:latest 
