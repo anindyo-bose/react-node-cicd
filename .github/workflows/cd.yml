@@ -15,7 +15,7 @@ jobs:
       run: sudo docker pull anindyobose/react-node-cicd:latest
 
     - name: Delete old Docker container
-      run: sudo docker rm -f react-node-cicd-container || true
+      run: sudo docker rm -f react-node-cicd-container 
 
     - name: Run the Docker Image
       run: sudo docker run -d -p 8080:8080 --name react-node-cicd-container anindyobose/react-node-cicd:latest
